@@ -69,7 +69,7 @@ exct-explain = "exctransformer.cli:explain_main"
 exct-build-dataset = "exctransformer.cli:build_dataset_main"
 
 [project.urls]
-Repository = "https://github.com/kkasiedu1914/ExCTransformer-release"
+Repository = "https://github.com/kkasiedu1914/ExCTransformer"
 
 [tool.setuptools.dynamic]
 version = {attr = "exctransformer._version.__version__"}

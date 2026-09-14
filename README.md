@@ -24,8 +24,8 @@ For GPU use, install a matching PyTorch/CUDA build instead of the CPU wheel.
 Start in a virtual environment:
 
 ```bash
-git clone https://github.com/kkasiedu1914/ExCTransformer-release.git
-cd ExCTransformer-release
+git clone https://github.com/kkasiedu1914/ExCTransformer.git
+cd ExCTransformer
 python3.11 -m venv .venv
 source .venv/bin/activate
 python -m pip install --upgrade pip

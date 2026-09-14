@@ -12,7 +12,7 @@ authors:
     given-names: "Luke"
     affiliation: "Department of Chemical Engineering, Virginia Tech"
     email: "achenie@vt.edu"
-repository-code: "https://github.com/kkasiedu1914/ExCTransformer-release"
+repository-code: "https://github.com/kkasiedu1914/ExCTransformer"
 abstract: "ExCTransformer is a crystal and MOF graph-learning package for dataset building, training, prediction, explanation, and manifest-driven asset downloads."
 keywords:
   - "ExCTransformer"
