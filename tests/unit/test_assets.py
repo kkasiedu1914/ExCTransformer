@@ -35,7 +35,7 @@ def test_local_asset_download_writes_metadata(tmp_path: Path) -> None:
                         "kind": "metadata",
                         "source_path": str(ROOT / "tests" / "fixtures" / "data" / "hmof_data.csv"),
                         "file_name": "hmof_data.csv",
-                        "sha256": "095474f860f642ce017b339641c131ab7aa54f042f98b413ba03ce23e4a4ce97",
+                        "sha256": "a88d9f5a6927905212ea5d64df1e0b5ae9d79674c2e46e84edcbd4a677f62b92",
                         "extract": False,
                     }
                 ],

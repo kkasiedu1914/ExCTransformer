@@ -62,6 +62,7 @@ See [the tutorial](docs/quickstart.md) for inputs, outputs, and next steps.
 - [Explanation visualization](docs/visualization.md)
 - [Faithfulness comparison](docs/faithfulness.md)
 - [Contributing](CONTRIBUTING.md)
+- [Release validation and scope](docs/release-validation.md)
 
 ## Command Line
 

@@ -43,7 +43,7 @@ def test_download_fetch_local_asset_smoke(tmp_path: Path) -> None:
                         "kind": "metadata",
                         "source_path": str(ROOT / "tests" / "fixtures" / "data" / "id_prop_reg_h2.csv"),
                         "file_name": "id_prop_reg_h2.csv",
-                        "sha256": "a6766da03b021edbff833de63e9a10c21854d6b030db82ac586d19e0d47ddc33",
+                        "sha256": "836d33e995909a7acf98ec42a32a94958054a59ba87e47437c7a256b79b6fdd9",
                         "extract": False,
                     }
                 ],
