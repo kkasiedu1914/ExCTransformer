@@ -1,0 +1,23 @@
+# Validated Linux / Python 3.11 runtime; install with pip -c this-file .
+ase==3.24.0
+h5py==3.13.0
+matplotlib==3.9.2
+networkx==3.4.2
+numpy==1.26.4
+pandas==2.2.3
+pyarrow==19.0.1
+pymatgen==2025.2.18
+pytorch-lightning==2.5.0.post0
+sacred==0.8.7
+scikit-learn==1.5.2
+scipy==1.14.1
+seaborn==0.13.2
+spglib==2.5.0
+tensorboard==2.19.0
+timm==1.0.15
+torch==2.4.1
+torchmetrics==1.6.1
+torchvision==0.19.1
+tqdm==4.66.6
+transformers==4.49.0
+xgboost==3.1.2

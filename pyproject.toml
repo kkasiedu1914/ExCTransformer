@@ -1,0 +1,85 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "exctransformer"
+dynamic = ["version"]
+description = "ExCTransformer: explainable crystal graph transformer workflows."
+readme = "README.md"
+requires-python = ">=3.11,<3.12"
+license = {text = "MIT"}
+authors = [
+    {name = "Kwabena Asiedu", email = "kkasiedu1@st.knust.edu.gh"},
+    {name = "Luke Achenie"},
+]
+keywords = [
+    "metal-organic frameworks",
+    "crystal graph",
+    "graph transformer",
+    "materials informatics",
+    "explainable AI",
+]
+dependencies = [
+    "ase",
+    "h5py",
+    "matplotlib",
+    "networkx",
+    "numpy>=1.26,<2",
+    "pandas",
+    "pyarrow",
+    "pymatgen",
+    "pytorch-lightning>=2.5,<2.6",
+    "sacred",
+    "scikit-learn",
+    "scipy",
+    "seaborn",
+    "spglib",
+    "tensorboard",
+    "timm>=1.0.15,<1.1",
+    "torch>=2.4,<2.5",
+    "torchmetrics>=1.6,<1.7",
+    "tqdm",
+    "transformers>=4.49,<4.50",
+    "xgboost",
+]
+
+[project.optional-dependencies]
+dev = [
+    "build",
+    "pytest",
+    "ruff",
+    "twine",
+]
+docs = [
+    "myst-parser",
+    "sphinx",
+]
+train = [
+    "tensorboard",
+]
+
+[project.scripts]
+exct = "exctransformer.cli:main"
+exct-download = "exctransformer.cli:download_main"
+exct-train = "exctransformer.cli:train_main"
+exct-test = "exctransformer.cli:test_main"
+exct-predict = "exctransformer.cli:predict_main"
+exct-explain = "exctransformer.cli:explain_main"
+exct-build-dataset = "exctransformer.cli:build_dataset_main"
+
+[project.urls]
+Repository = "https://github.com/kkasiedu1914/ExCTransformer-release"
+
+[tool.setuptools.dynamic]
+version = {attr = "exctransformer._version.__version__"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["exctransformer*", "gscgcnn_transformer*"]
+
+[tool.setuptools.package-data]
+exctransformer = ["manifests/*.json", "datamodule/data/*.json"]
+
+[tool.setuptools]
+license-files = ["LICENSE", "LICENSES/*.txt", "THIRD_PARTY_NOTICES.md"]

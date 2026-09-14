@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+title: "ExCTransformer"
+message: "If you use ExCTransformer, please cite the software using this metadata."
+type: software
+version: 1.0.0
+authors:
+  - family-names: "Asiedu"
+    given-names: "Kwabena"
+    email: "kkasiedu1@st.knust.edu.gh"
+    affiliation: KNUST
+  - family-names: "Achenie"
+    given-names: "Luke"
+    affiliation: "Department of Chemical Engineering, Virginia Tech"
+    email: "achenie@vt.edu"
+repository-code: "https://github.com/kkasiedu1914/ExCTransformer-release"
+abstract: "ExCTransformer is a crystal and MOF graph-learning package for dataset building, training, prediction, explanation, and manifest-driven asset downloads."
+keywords:
+  - "ExCTransformer"
+  - "metal-organic frameworks"
+  - "crystal graph"
+  - "graph transformer"
+  - "materials informatics"
+  - "explainable AI"
