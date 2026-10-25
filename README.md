@@ -1,6 +1,6 @@
 # ExCTransformer
 
-**Current stable release: [v1.0.1](https://github.com/kkasiedu1914/ExCTransformer/releases/tag/v1.0.1)** — includes the installed `exct-download` argument fix. [Software DOI](https://doi.org/10.5281/zenodo.23648584).
+**Current stable release: [v1.0.2](https://github.com/kkasiedu1914/ExCTransformer/releases/tag/v1.0.2)** — public downloads require no account or credentials. [Software DOI](https://doi.org/10.5281/zenodo.23649247).
 
 ExCTransformer is an explainable crystal-graph transformer package for adsorption-property modeling in porous crystalline materials, especially metal-organic frameworks (MOFs). It supports crystal graph construction from CIF files, model training and inference, GraphSVX-style atom attribution, and visualization of saved explanation outputs.
 
@@ -26,7 +26,7 @@ For GPU use, install a matching PyTorch/CUDA build instead of the CPU wheel.
 Start in a virtual environment:
 
 ```bash
-git clone --branch v1.0.1 --depth 1 https://github.com/kkasiedu1914/ExCTransformer.git
+git clone --branch v1.0.2 --depth 1 https://github.com/kkasiedu1914/ExCTransformer.git
 cd ExCTransformer
 python3.11 -m venv .venv
 source .venv/bin/activate
@@ -157,23 +157,11 @@ exct download all --kind metadata --destination ./release-assets
 exct download all --kind explanation --destination ./release-assets
 ```
 
-The downloader verifies the checksum recorded in `assets/manifests/v1.0.1.json`. Figshare currently exposes MD5 checksums for these files, and the package verifies those MD5 values. Local or future mirrors can also use SHA256 entries in the same manifest format.
+The downloader verifies the checksum recorded in `assets/manifests/v1.0.2.json`. Figshare currently exposes MD5 checksums for these files, and the package verifies those MD5 values. Local or future mirrors can also use SHA256 entries in the same manifest format.
 
 `hmof-graph-data` and `synthesized-structure-explanations` are archive assets and are extracted automatically by default. `experimental-cifs` is a RAR archive; the package downloads and verifies it but does not auto-extract RAR files.
 
-While the Figshare article is private, authenticated maintainers can validate the same manifest URLs by setting:
-
-```bash
-export FIGSHARE_TOKEN_FILE=/path/to/figshare_token.txt
-```
-
-or:
-
-```bash
-export FIGSHARE_TOKEN=...
-```
-
-Once the Figshare article is public, the same direct file URLs are expected to work without either environment variable.
+All published release assets are public. Run the download commands directly; no account, API key, or credentials are required.
 
 ## Python Use Cases
 
@@ -374,8 +362,8 @@ exct download fetch exctransformer-base --destination ./release-assets
 exct download fetch synthesized-structure-explanations --destination ./release-assets
 
 exct explain visualize \
-  './release-assets/1.0.1/explanations/synthesized-structures/extracted/explanations/by_structure/2020[Cu][pts]3[ASR]1/ch4/2020[Cu][pts]3[ASR]1_pred2_shap.pt' \
-  --model-path ./release-assets/1.0.1/models/exctransformer-base/exctransformer.ckpt \
+  './release-assets/1.0.2/explanations/synthesized-structures/extracted/explanations/by_structure/2020[Cu][pts]3[ASR]1/ch4/2020[Cu][pts]3[ASR]1_pred2_shap.pt' \
+  --model-path ./release-assets/1.0.2/models/exctransformer-base/exctransformer.ckpt \
   --save-dir docs/assets/visualization/generated \
   --filename-prefix 2020_cu_pts_ch4_pred2 \
   --vis-modes attn-shap-3d \
@@ -397,7 +385,7 @@ Render a 2D attention/SHAP heatmap:
 
 ```bash
 exct explain visualize assets/tutorial_data/visualization/hmof_20208/hMOF-20208_pred0_shap.pt \
-  --model-path ./release-assets/1.0.1/models/exctransformer-base/exctransformer.ckpt \
+  --model-path ./release-assets/1.0.2/models/exctransformer-base/exctransformer.ckpt \
   --save-dir docs/assets/visualization/generated \
   --filename-prefix hmof_20208_pred0 \
   --vis-modes attn-shap-2d \
@@ -485,7 +473,7 @@ and installs a wheel and runs the CPU tutorial with explanations.
 For this software release, cite:
 
 ```text
-Asiedu, K., & Achenie, L. (2026). ExCTransformer (v1.0.1) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.23648584
+Asiedu, K., & Achenie, L. (2026). ExCTransformer (v1.0.2) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.23649247
 ```
 
 `CITATION.cff` supplies this version-specific software citation to GitHub. For a reference to the project across versions, use the [concept DOI](https://doi.org/10.5281/zenodo.20777272). Cite the specific release used for reproducible results.
