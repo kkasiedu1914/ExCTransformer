@@ -6,6 +6,8 @@ import subprocess
 import sys
 from pathlib import Path
 
+import pytest
+
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -29,6 +31,34 @@ def test_download_list_smoke() -> None:
     names = {asset["name"] for asset in payload["assets"]}
     assert "exctransformer-base" in names
     assert "hmof-metadata" in names
+
+
+@pytest.mark.parametrize("explicit_arguments", [False, True])
+def test_download_shortcut_list_smoke(explicit_arguments: bool) -> None:
+    env = os.environ.copy()
+    env["PYTHONPATH"] = str(ROOT / "src")
+    call = "download_main(['list'])" if explicit_arguments else "download_main()"
+    result = subprocess.run(
+        [sys.executable, "-c",
+         f"from exctransformer.cli import download_main; raise SystemExit({call})",
+         "invalid-process-argument" if explicit_arguments else "list"],
+        cwd=ROOT, env=env, text=True, capture_output=True, check=True,
+    )
+    names = {asset["name"] for asset in json.loads(result.stdout)["assets"]}
+    assert "exctransformer-base" in names
+
+
+def test_download_shortcut_explicit_empty_arguments_do_not_use_process_arguments() -> None:
+    env = os.environ.copy()
+    env["PYTHONPATH"] = str(ROOT / "src")
+    result = subprocess.run(
+        [sys.executable, "-c",
+         "from exctransformer.cli import download_main; raise SystemExit(download_main([]))",
+         "list"],
+        cwd=ROOT, env=env, text=True, capture_output=True,
+    )
+    assert result.returncode == 2
+    assert "download_command" in result.stderr
 
 
 def test_download_fetch_local_asset_smoke(tmp_path: Path) -> None:

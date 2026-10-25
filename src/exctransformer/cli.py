@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import ast
 import json
+import sys
 from pathlib import Path
 from typing import Any
 
@@ -485,7 +486,7 @@ def build_dataset_main(argv: list[str] | None = None) -> int:
 
 
 def download_main(argv: list[str] | None = None) -> int:
-    return main(["download", *(argv or [])])
+    return main(["download", *(sys.argv[1:] if argv is None else argv)])
 
 
 if __name__ == "__main__":
