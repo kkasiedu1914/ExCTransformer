@@ -91,12 +91,12 @@ exct-download --help
 
 ## Official Assets
 
-**Research asset access:** the Figshare record was not publicly accessible when checked on 2026-09-14. The commands below require access until its owner publishes the record. Making this GitHub repository public does not publish Figshare assets. The CPU quickstart and use with your own data do not depend on Figshare.
+**Research asset access:** the Figshare dataset is public as of 2026-10-25. The download commands below work without an account or API token. The CPU quickstart and use with your own data also remain self-contained.
 
 Full datasets, pretrained checkpoints, and generated outputs are hosted outside the source repository. The v1.0.0 asset record is:
 
-- Figshare article: `https://figshare.com/articles/dataset/_/31941117`
-- Citation: `Asiedu, Kwabena (2026). ExCTransformer. figshare. Dataset. https://figshare.com/articles/dataset/_/31941117`
+- Figshare article: `https://doi.org/10.6084/m9.figshare.31941117.v1`
+- Citation: `Asiedu, Kwabena Koranteng; Achenie, Luke E. K.; Asiedu, Nana Yaw (2026). ExCTransformer. figshare. Dataset. https://doi.org/10.6084/m9.figshare.31941117.v1`
 - Asset license: CC BY 4.0
 
 The source repository contains only code, documentation, tests, manifests, and tiny fixtures. Large graph datasets, CIF collections, checkpoints, saved explanation bundles, logs, and generated media are not stored in git.
@@ -485,7 +485,7 @@ Citation metadata is provided in `CITATION.cff`.
 When using the hosted datasets, checkpoints, or explanation assets, cite the Figshare asset record:
 
 ```text
-Asiedu, Kwabena (2026). ExCTransformer. figshare. Dataset. https://figshare.com/articles/dataset/_/31941117
+Asiedu, Kwabena Koranteng; Achenie, Luke E. K.; Asiedu, Nana Yaw (2026). ExCTransformer. figshare. Dataset. https://doi.org/10.6084/m9.figshare.31941117.v1
 ```
 
 ## Contributions

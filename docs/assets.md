@@ -1,13 +1,13 @@
 # Release Assets
 
-**Research asset access:** the Figshare record was not publicly accessible when checked on 2026-09-14. The commands below require access until its owner publishes the record. Making this GitHub repository public does not publish Figshare assets. The CPU quickstart and use with your own data do not depend on Figshare.
+**Research asset access:** the Figshare dataset is public as of 2026-10-25. The download commands below work without an account or API token. The CPU quickstart and use with your own data also remain self-contained.
 
 ExCTransformer source distributions do not include full datasets, checkpoints, generated SHAP outputs, logs, or media files. Those assets are distributed through the official Figshare record and resolved by the package manifest.
 
 Figshare record:
 
 ```text
-https://figshare.com/articles/dataset/_/31941117
+https://doi.org/10.6084/m9.figshare.31941117.v1
 ```
 
 Local cache:
@@ -48,4 +48,4 @@ exct download all --destination ./release-assets
 
 The v1.0.0 manifest is stored at `assets/manifests/v1.0.0.json` and packaged at `src/exctransformer/manifests/v1.0.0.json`. Each entry records the Figshare URL, file size, checksum, and extraction behavior used by the downloader.
 
-While the Figshare article is private (**Will be changed**), set `FIGSHARE_TOKEN` or `FIGSHARE_TOKEN_FILE` before running `exct download`. The downloader sends that token only to Figshare and follows the signed storage redirect without forwarding the token. After the article is public, users should not need a token for the same manifest URLs.
+The public release assets require neither `FIGSHARE_TOKEN` nor `FIGSHARE_TOKEN_FILE`. Both `exct download` and the `exct-download` shortcut use the same versioned manifest and checksum verification.
