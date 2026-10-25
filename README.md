@@ -161,7 +161,7 @@ The downloader verifies the checksum recorded in `assets/manifests/v1.0.2.json`.
 
 `hmof-graph-data` and `synthesized-structure-explanations` are archive assets and are extracted automatically by default. `experimental-cifs` is a RAR archive; the package downloads and verifies it but does not auto-extract RAR files.
 
-All published release assets are public. Run the download commands directly; no account, API key, or credentials are required.
+All published release assets are public.
 
 ## Python Use Cases
 
