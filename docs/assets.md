@@ -46,6 +46,6 @@ Fetch all assets:
 exct download all --destination ./release-assets
 ```
 
-The v1.0.0 manifest is stored at `assets/manifests/v1.0.0.json` and packaged at `src/exctransformer/manifests/v1.0.0.json`. Each entry records the Figshare URL, file size, checksum, and extraction behavior used by the downloader.
+The v1.0.1 manifest is stored at `assets/manifests/v1.0.1.json` and packaged at `src/exctransformer/manifests/v1.0.1.json`. It references the same published research files as v1.0.0; the v1.0.0 manifests remain available for reproducibility. Each entry records the Figshare URL, file size, checksum, and extraction behavior used by the downloader.
 
 The public release assets require neither `FIGSHARE_TOKEN` nor `FIGSHARE_TOKEN_FILE`. Both `exct download` and the `exct-download` shortcut use the same versioned manifest and checksum verification.

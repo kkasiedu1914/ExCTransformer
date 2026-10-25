@@ -3,7 +3,8 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from exctransformer.assets import download_asset, list_manifest_assets, resolve_manifest_path
+from exctransformer.assets import download_asset, list_manifest_assets, resolve_manifest_path, load_manifest
+from exctransformer._version import __version__
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -52,3 +53,22 @@ def test_local_asset_download_writes_metadata(tmp_path: Path) -> None:
     assert metadata.exists()
     payload = json.loads(metadata.read_text())
     assert payload["name"] == "hmof-metadata-fixture"
+
+
+def test_default_manifest_matches_package_version() -> None:
+    manifest = load_manifest()
+    assert manifest["version"] == __version__
+    assert Path(manifest["_manifest_path"]).name == f"v{__version__}.json"
+    assert len(manifest["assets"]) == 9
+
+
+def test_current_source_and_packaged_manifests_match() -> None:
+    name = f"v{__version__}.json"
+    source = json.loads((ROOT / "assets" / "manifests" / name).read_text())
+    packaged = json.loads((ROOT / "src" / "exctransformer" / "manifests" / name).read_text())
+    assert source == packaged
+    previous = json.loads((ROOT / "assets" / "manifests" / "v1.0.0.json").read_text())
+    keys = ["name", "url", "file_name", "size_bytes", "md5", "extract", "destination"]
+    assert [[entry.get(key) for key in keys] for entry in source["assets"]] == [
+        [entry.get(key) for key in keys] for entry in previous["assets"]
+    ]

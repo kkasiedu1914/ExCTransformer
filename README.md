@@ -1,5 +1,7 @@
 # ExCTransformer
 
+**Current stable release: [v1.0.1](https://github.com/kkasiedu1914/ExCTransformer/releases/tag/v1.0.1)** — includes the installed `exct-download` argument fix. [Software DOI](https://doi.org/10.5281/zenodo.23648584).
+
 ExCTransformer is an explainable crystal-graph transformer package for adsorption-property modeling in porous crystalline materials, especially metal-organic frameworks (MOFs). It supports crystal graph construction from CIF files, model training and inference, GraphSVX-style atom attribution, and visualization of saved explanation outputs.
 
 The package is distributed as `exctransformer` and provides both Python APIs and Linux/HPC-friendly command-line entry points.
@@ -24,7 +26,7 @@ For GPU use, install a matching PyTorch/CUDA build instead of the CPU wheel.
 Start in a virtual environment:
 
 ```bash
-git clone https://github.com/kkasiedu1914/ExCTransformer.git
+git clone --branch v1.0.1 --depth 1 https://github.com/kkasiedu1914/ExCTransformer.git
 cd ExCTransformer
 python3.11 -m venv .venv
 source .venv/bin/activate
@@ -36,8 +38,8 @@ exct --help
 
 This is a regular, non-editable installation. The distribution name is
 `exctransformer`; this release is installed from GitHub or a source checkout,
-not from a claimed PyPI publication. While the repository is private, cloning
-requires collaborator access. After it is public, the same command works for everyone.
+not from a claimed PyPI publication. The repository and stable release are public;
+cloning and downloading release artifacts require no account or API token.
 
 For development, use `python -m pip install -c requirements/constraints-py311.txt -e ".[dev]"`.
 The constraints record the runtime versions used in release validation.
@@ -93,7 +95,7 @@ exct-download --help
 
 **Research asset access:** the Figshare dataset is public as of 2026-10-25. The download commands below work without an account or API token. The CPU quickstart and use with your own data also remain self-contained.
 
-Full datasets, pretrained checkpoints, and generated outputs are hosted outside the source repository. The v1.0.0 asset record is:
+Full datasets, pretrained checkpoints, and generated outputs are hosted outside the source repository. The published Figshare asset record is:
 
 - Figshare article: `https://doi.org/10.6084/m9.figshare.31941117.v1`
 - Citation: `Asiedu, Kwabena Koranteng; Achenie, Luke E. K.; Asiedu, Nana Yaw (2026). ExCTransformer. figshare. Dataset. https://doi.org/10.6084/m9.figshare.31941117.v1`
@@ -140,7 +142,7 @@ Download into a project-local directory:
 exct download fetch exctransformer-base --destination ./release-assets
 ```
 
-Download all official v1.0.0 assets:
+Download all official release assets:
 
 ```bash
 exct download all --destination ./release-assets
@@ -155,7 +157,7 @@ exct download all --kind metadata --destination ./release-assets
 exct download all --kind explanation --destination ./release-assets
 ```
 
-The downloader verifies the checksum recorded in `assets/manifests/v1.0.0.json`. Figshare currently exposes MD5 checksums for these files, and the package verifies those MD5 values. Local or future mirrors can also use SHA256 entries in the same manifest format.
+The downloader verifies the checksum recorded in `assets/manifests/v1.0.1.json`. Figshare currently exposes MD5 checksums for these files, and the package verifies those MD5 values. Local or future mirrors can also use SHA256 entries in the same manifest format.
 
 `hmof-graph-data` and `synthesized-structure-explanations` are archive assets and are extracted automatically by default. `experimental-cifs` is a RAR archive; the package downloads and verifies it but does not auto-extract RAR files.
 
@@ -372,8 +374,8 @@ exct download fetch exctransformer-base --destination ./release-assets
 exct download fetch synthesized-structure-explanations --destination ./release-assets
 
 exct explain visualize \
-  './release-assets/1.0.0/explanations/synthesized-structures/extracted/explanations/by_structure/2020[Cu][pts]3[ASR]1/ch4/2020[Cu][pts]3[ASR]1_pred2_shap.pt' \
-  --model-path ./release-assets/1.0.0/models/exctransformer-base/exctransformer.ckpt \
+  './release-assets/1.0.1/explanations/synthesized-structures/extracted/explanations/by_structure/2020[Cu][pts]3[ASR]1/ch4/2020[Cu][pts]3[ASR]1_pred2_shap.pt' \
+  --model-path ./release-assets/1.0.1/models/exctransformer-base/exctransformer.ckpt \
   --save-dir docs/assets/visualization/generated \
   --filename-prefix 2020_cu_pts_ch4_pred2 \
   --vis-modes attn-shap-3d \
@@ -395,7 +397,7 @@ Render a 2D attention/SHAP heatmap:
 
 ```bash
 exct explain visualize assets/tutorial_data/visualization/hmof_20208/hMOF-20208_pred0_shap.pt \
-  --model-path ./release-assets/1.0.0/models/exctransformer-base/exctransformer.ckpt \
+  --model-path ./release-assets/1.0.1/models/exctransformer-base/exctransformer.ckpt \
   --save-dir docs/assets/visualization/generated \
   --filename-prefix hmof_20208_pred0 \
   --vis-modes attn-shap-2d \
@@ -480,7 +482,15 @@ and installs a wheel and runs the CPU tutorial with explanations.
 
 ## Citation
 
-Citation metadata is provided in `CITATION.cff`.
+For this software release, cite:
+
+```text
+Asiedu, K., & Achenie, L. (2026). ExCTransformer (v1.0.1) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.23648584
+```
+
+`CITATION.cff` supplies this version-specific software citation to GitHub. For a reference to the project across versions, use the [concept DOI](https://doi.org/10.5281/zenodo.20777272). Cite the specific release used for reproducible results.
+
+The associated manuscript, “Property-Defining Feature Extraction in Porous Crystalline Materials Using Attention-Guided Cooperative Game Theory,” has been accepted by the *Journal of Chemical Information and Modeling*. Its paper DOI will be added when assigned; the software DOI above is already available independently.
 
 When using the hosted datasets, checkpoints, or explanation assets, cite the Figshare asset record:
 
