@@ -1,0 +1,116 @@
+{
+  "version": "1.0.2",
+  "source": {
+    "host": "figshare",
+    "article_id": "31941117",
+    "article_url": "https://doi.org/10.6084/m9.figshare.31941117.v1",
+    "citation": "Asiedu, Kwabena Koranteng; Achenie, Luke E. K.; Asiedu, Nana Yaw (2026). ExCTransformer. figshare. Dataset. https://doi.org/10.6084/m9.figshare.31941117.v1",
+    "license": "CC BY 4.0"
+  },
+  "assets": [
+    {
+      "name": "exctransformer-base",
+      "kind": "model",
+      "description": "Official ExCTransformer v1.0.0 pretrained checkpoint for hMOF prediction and explanation workflows.",
+      "url": "https://ndownloader.figshare.com/files/64021021",
+      "file_name": "exctransformer.ckpt",
+      "size_bytes": 1032937567,
+      "md5": "cef47721f6c7296b1b8611d5e475f7bc",
+      "extract": false,
+      "destination": "models/exctransformer-base",
+      "citation": "Asiedu, Kwabena Koranteng; Achenie, Luke E. K.; Asiedu, Nana Yaw (2026). ExCTransformer. figshare. Dataset. https://doi.org/10.6084/m9.figshare.31941117.v1"
+    },
+    {
+      "name": "exctransformer-pm",
+      "kind": "model",
+      "description": "Additional ExCTransformer v1.0.0 pretrained checkpoint distributed with the official Figshare release assets.",
+      "url": "https://ndownloader.figshare.com/files/63464169",
+      "file_name": "PM_exctransformer.ckpt",
+      "size_bytes": 1032937234,
+      "md5": "8bf22c37e93fc2a074c1954a84052547",
+      "extract": false,
+      "destination": "models/exctransformer-pm",
+      "citation": "Asiedu, Kwabena Koranteng; Achenie, Luke E. K.; Asiedu, Nana Yaw (2026). ExCTransformer. figshare. Dataset. https://doi.org/10.6084/m9.figshare.31941117.v1"
+    },
+    {
+      "name": "hmof-graph-data",
+      "kind": "data",
+      "description": "Prebuilt HDF5 graph dataset for hypothetical MOF workflows.",
+      "url": "https://ndownloader.figshare.com/files/64021273",
+      "file_name": "graph_data1.tar.gz",
+      "size_bytes": 10722759285,
+      "md5": "69014fcef199c3bb268ad31aa6b996b1",
+      "extract": true,
+      "destination": "data/hmof-graph-data",
+      "citation": "Asiedu, Kwabena Koranteng; Achenie, Luke E. K.; Asiedu, Nana Yaw (2026). ExCTransformer. figshare. Dataset. https://doi.org/10.6084/m9.figshare.31941117.v1"
+    },
+    {
+      "name": "experimental-cifs",
+      "kind": "data",
+      "description": "Experimental CIF archive used for prediction and explanation demonstrations on synthesized MOFs.",
+      "url": "https://ndownloader.figshare.com/files/63464268",
+      "file_name": "experimental_cifs.rar",
+      "size_bytes": 694447,
+      "md5": "9dc6a438ce2230118dcd0c5024a1f873",
+      "extract": false,
+      "destination": "data/experimental-cifs",
+      "note": "RAR archives are downloaded and checksum-verified but are not auto-extracted by the package."
+    },
+    {
+      "name": "hmof-metadata",
+      "kind": "metadata",
+      "description": "hMOF descriptor and target metadata CSV for ExCTransformer workflows.",
+      "url": "https://ndownloader.figshare.com/files/63478683",
+      "file_name": "hmof_data.csv",
+      "size_bytes": 10927265,
+      "md5": "cb1acd0f817047552d1454c66c13348d",
+      "extract": false,
+      "destination": "metadata/hmof-metadata"
+    },
+    {
+      "name": "hmof-metadata-v2",
+      "kind": "metadata",
+      "description": "Additional hMOF descriptor and target metadata CSV distributed in the v1.0.0 Figshare asset set.",
+      "url": "https://ndownloader.figshare.com/files/63478677",
+      "file_name": "hmof_data_2.csv",
+      "size_bytes": 10462260,
+      "md5": "4ba8f3d6985649a3a479e58cbf36abb7",
+      "extract": false,
+      "destination": "metadata/hmof-metadata-v2"
+    },
+    {
+      "name": "id-prop-reg-h2",
+      "kind": "metadata",
+      "description": "Hydrogen adsorption target CSV used when building H5 graph datasets.",
+      "url": "https://ndownloader.figshare.com/files/63478680",
+      "file_name": "id_prop_reg_h2.csv",
+      "size_bytes": 8792397,
+      "md5": "b54e92a671dcf98b5a00a970be52a922",
+      "extract": false,
+      "destination": "metadata/id-prop-reg-h2"
+    },
+    {
+      "name": "atom-init",
+      "kind": "metadata",
+      "description": "Atom feature initialization JSON for crystal-graph construction.",
+      "url": "https://ndownloader.figshare.com/files/63478686",
+      "file_name": "atom_init.json",
+      "size_bytes": 10721,
+      "md5": "c500757d551b337659296ee52999a4ce",
+      "extract": false,
+      "destination": "metadata/atom-init",
+      "note": "A package copy is bundled under exctransformer.datamodule.data for normal graph construction."
+    },
+    {
+      "name": "synthesized-structure-explanations",
+      "kind": "explanation",
+      "description": "Saved explanation outputs for synthesized-structure workflows.",
+      "url": "https://ndownloader.figshare.com/files/64035967",
+      "file_name": "explanations_on_sythesized_structures.zip",
+      "size_bytes": 25202211,
+      "md5": "9fdfda3aabf9332292c29ee543a749bd",
+      "extract": true,
+      "destination": "explanations/synthesized-structures"
+    }
+  ]
+}

@@ -2,11 +2,11 @@ cff-version: 1.2.0
 title: "ExCTransformer"
 message: "If you use ExCTransformer, please cite the software using this metadata."
 type: software
-version: 1.0.1
-doi: 10.5281/zenodo.23648584
+version: 1.0.2
+doi: 10.5281/zenodo.23649247
 date-released: 2026-10-25
 license: MIT
-url: "https://github.com/kkasiedu1914/ExCTransformer/releases/tag/v1.0.1"
+url: "https://github.com/kkasiedu1914/ExCTransformer/releases/tag/v1.0.2"
 authors:
   - family-names: "Asiedu"
     given-names: "Kwabena"
