@@ -17,7 +17,7 @@ Render a 2D attention/SHAP heatmap:
 
 ```bash
 exct explain visualize assets/tutorial_data/visualization/hmof_20208/hMOF-20208_pred0_shap.pt \
-  --model-path ./release-assets/1.0.0/models/exctransformer-base/exctransformer.ckpt \
+  --model-path ./release-assets/1.0.1/models/exctransformer-base/exctransformer.ckpt \
   --save-dir docs/assets/visualization/generated \
   --filename-prefix hmof_20208_pred0 \
   --vis-modes attn-shap-2d \
@@ -34,8 +34,8 @@ Render a 3D attention/SHAP comparison:
 exct download fetch synthesized-structure-explanations --destination ./release-assets
 
 exct explain visualize \
-  './release-assets/1.0.0/explanations/synthesized-structures/extracted/explanations/by_structure/2020[Cu][pts]3[ASR]1/ch4/2020[Cu][pts]3[ASR]1_pred2_shap.pt' \
-  --model-path ./release-assets/1.0.0/models/exctransformer-base/exctransformer.ckpt \
+  './release-assets/1.0.1/explanations/synthesized-structures/extracted/explanations/by_structure/2020[Cu][pts]3[ASR]1/ch4/2020[Cu][pts]3[ASR]1_pred2_shap.pt' \
+  --model-path ./release-assets/1.0.1/models/exctransformer-base/exctransformer.ckpt \
   --save-dir docs/assets/visualization/generated \
   --filename-prefix 2020_cu_pts_ch4_pred2 \
   --vis-modes attn-shap-3d \

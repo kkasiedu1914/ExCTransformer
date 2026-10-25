@@ -1,4 +1,4 @@
-include AUTHORS.md CITATION.cff CONTRIBUTING.md THIRD_PARTY_NOTICES.md
+include AUTHORS.md CITATION.cff CONTRIBUTING.md RELEASE_NOTES.md THIRD_PARTY_NOTICES.md
 recursive-include LICENSES *.txt
 recursive-include docs *.md *.png
 recursive-include examples *.py
